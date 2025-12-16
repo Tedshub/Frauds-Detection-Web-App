@@ -14,9 +14,22 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+
+            // Tambahkan kolom role dengan tipe enum
+            // Pilihan: 'customer', 'admin'
+            // Default: 'customer'
+            $table->enum('role', ['customer', 'admin'])->default('customer');
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+
+            // Tambahkan kolom PAN (Primary Account Number)
+            // Kolom ini nullable karena hanya user dengan role 'customer' yang akan mengisinya.
+            // Validasi untuk memastikan hanya customer yang mengisi kolom ini
+            // sebaiknya dilakukan di level aplikasi (misalnya di Form Request).
+            $table->string('pan')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });

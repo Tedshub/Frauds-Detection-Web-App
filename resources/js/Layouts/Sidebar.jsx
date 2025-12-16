@@ -1,3 +1,4 @@
+// resources/js/Layouts/Sidebar.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Link, usePage, router } from "@inertiajs/react";
 import {
@@ -12,15 +13,16 @@ import {
   ChevronRight,
   ChevronLeft,
   Clock,
+  User,
 } from "lucide-react";
 
 const menuItems = [
   { label: "Dashboard", icon: <Home size={20} />, path: "/dashboard" },
-  { label: "Hubungan", icon: <Users size={20} />, path: "/relations", hasNotification: true },
   { label: "Transaksi", icon: <BarChart2 size={20} />, path: "/transactions" },
-  { label: "Tabungan", icon: <PiggyBank size={20} />, path: "/savings", comingSoon: true },
-  { label: "Penganggaran", icon: <Wallet size={20} />, path: "/saving-goals", comingSoon: true },
-  { label: "Laporan Keuangan", icon: <FileText size={20} />, path: "/statements", comingSoon: true },
+  { label: "Fraudulent Transaction", icon: <FileText size={20} />, path: "/fraudsList", hasNotification: true },
+  { label: "Menu 4", icon: <Clock size={20} />, path: "/menu-3", comingSoon: true },
+  { label: "Menu 5", icon: <Users size={20} />, path: "/menu-4", comingSoon: true },
+  { label: "Menu 6", icon: <Calculator size={20} />, path: "/menu-5", comingSoon: true },
   { label: "Pengaturan", icon: <Settings size={20} />, path: "/settings", comingSoon: true },
 ];
 
@@ -175,10 +177,6 @@ export default function Sidebar() {
             ))}
           </ul>
 
-          {/* Footer */}
-          <footer className="px-4 py-4 text-xs text-gray-200 text-center border-t border-[#6b87ee]">
-            <p>&copy; Credit Cards App 2025</p>
-          </footer>
         </aside>
 
         <style jsx>{`
@@ -254,9 +252,6 @@ export default function Sidebar() {
           ))}
         </ul>
 
-        <footer className="px-4 py-4 text-xs text-gray-200 text-center border-t border-[#6b87ee]">
-          &copy; Credit Cards App 2025
-        </footer>
       </aside>
 
       <style jsx>{`
