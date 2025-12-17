@@ -97,6 +97,7 @@ APP_ENV=local
 APP_KEY=
 APP_DEBUG=true
 APP_URL=http://localhost
+PYTHON_API_BASE_URL=http://127.0.0.1:5000
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
